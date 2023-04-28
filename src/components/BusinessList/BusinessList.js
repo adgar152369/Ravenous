@@ -2,12 +2,17 @@ import React from "react";
 import './BusinessList.css';
 import Business from "../Business/Business";
 
-function BusinessList(props) {
+function BusinessList({ businesses }) {
+
   return (
     <div className="BusinessList">
-      {props.businessList.map(business => {
-        return <Business key={business.name} business={business} />
-      })}
+      {businesses ? (
+        businesses.map(business => (
+          <Business key={business.id} business={business} />
+        ))
+      ) : (
+        <p></p>
+      )}
     </div>
   )
 }

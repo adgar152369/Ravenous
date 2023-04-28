@@ -1,23 +1,22 @@
 import React from "react";
 import './Business.css';
 
-function Business(props) {
+function Business({business}) {
   return (
     <div className="Business">
       <div className="image-container">
-        <img src={props.business.imageSrc} alt='' />
+        <img src={business.image_url} alt='' />
       </div>
-      <h2>{props.business.name}</h2>
+      <a href={business.url} target="_blank"><h2>{business.name}</h2></a>
       <div className="Business-information">
         <div className="Business-address">
-          <p>{props.business.address}</p>
-          <p>{props.business.city}</p>
-          <p>{props.business.state} {props.business.zipCode}</p>
+          <p>{business.location.display_address[0]}</p>
+          <p>{business.location.display_address[1]}</p>
         </div>
         <div className="Business-reviews">
-          <h3>{props.business.category}</h3>
-          <h3 className="rating">{props.business.rating}</h3>
-          <p>{props.business.reviewCount}</p>
+          <h3>{business.categories[0].title}</h3>
+          <h3 className="rating">{business.rating} stars</h3>
+          <p>{business.review_count} ratings</p>
         </div>
       </div>
     </div>

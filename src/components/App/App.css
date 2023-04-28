@@ -1,5 +1,9 @@
 /* Universal Styles */
 
+body {
+  /* background-color: rgb(56, 56, 56); */
+}
+
 html {
   font-size: 18px;
 }

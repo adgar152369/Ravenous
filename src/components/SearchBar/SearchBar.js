@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import getYelpData from "../../utils/yelp_api";
 import './SearchBar.css';
 
 const sortByOptions = {
@@ -7,7 +8,7 @@ const sortByOptions = {
   'Most Reviewed': 'review_count'
 }
 
-function SearchBar() {
+function SearchBar({ searchYelp }) {
   // reflect changes in state when user interacts
   const [term, setTerm] = useState('');
   const [location, setLocation] = useState('');
@@ -25,7 +26,7 @@ function SearchBar() {
 
   function handleSearchGo(e) {
     e.preventDefault();
-    console.log(term, location, sortOption)
+    searchYelp(term, location, sortOption);
   }
 
   function renderSortByOptions() {
@@ -45,13 +46,15 @@ function SearchBar() {
           {renderSortByOptions()}
         </ul>
       </div>
-      <div className="SearchBar-fields">
-        <input onChange={({ target }) => setTerm(target.value)} placeholder="Search Businesses" />
-        <input onChange={({ target }) => setLocation(target.value)} placeholder="Where?" />
-      </div>
-      <div className="SearchBar-submit">
-        <a onClick={handleSearchGo}>Let's Go</a>
-      </div>
+      <form onSubmit={handleSearchGo}>
+        <div className="SearchBar-fields">
+          <input onChange={({ target }) => setTerm(target.value)} placeholder="Search Businesses" />
+          <input onChange={({ target }) => setLocation(target.value)} placeholder="Where?" />
+        </div>
+        <div className="SearchBar-submit">
+          <button type="submit">Let's Go</button>
+        </div>
+      </form>
     </div>
   );
 }
