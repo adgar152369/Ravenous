@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import BusinessList from '../BusinessList/BusinessList';
 import SearchBar from '../SearchBar/SearchBar';
 import Yelp from '../../utils/yelp_api';
