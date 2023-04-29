@@ -10,12 +10,11 @@ app.use(cors());
 
 
 app.get('/:location/:terms/:sortByOption', async (req, res) => {
-  const apiKey = process.env.YELP_API_KEY;
+  const apiKey ="sRwtZHQjP9SouzLjUzVHCN0z5zkJDDEvWot0fPToIQlf64sy4nt2czfwSq6l0pABaN27nkyeOlx3APkSep_n9n1B0qDEhpBiSrtcSVxcFq4bBJ4OgP2vK6xcWSFLZHYx";
   const { location, terms, sortByOption } = req.params;
   const url = `https://api.yelp.com/v3/businesses/search?location=${location}&term=${terms}&sort_by=${sortByOption}&limit=20`;
   const response = await fetch(url, {
     headers: {
-      origin: 'http://localhost:3000',
       accept: 'application/json',
       Authorization: `Bearer ${apiKey}`,
     },

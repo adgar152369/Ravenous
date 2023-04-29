@@ -4,3 +4,6 @@ node_modules
 config.js
 
 .env
+Dockerfile
+build
+backend
