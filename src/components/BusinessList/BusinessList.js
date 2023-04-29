@@ -4,6 +4,8 @@ import Business from "../Business/Business";
 
 function BusinessList({ businesses }) {
 
+  console.log(businesses)
+
   return (
     <div className="BusinessList">
       {businesses ? (

@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       <h1>ravenous</h1>
       <SearchBar searchYelp={searchYelp} />
-      <BusinessList businesses={businesses.businesses} />
+      <BusinessList businesses={businesses ? businesses.businesses : 'uh oh, error.'} />
     </div>
   );
 }

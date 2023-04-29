@@ -1,4 +1,4 @@
-const YELP_API_KEY = '';
+import { REACT_APP_YELP } from "../config";
 
 const Yelp = {
   async search(terms, location, sortByOption) {
@@ -7,7 +7,7 @@ const Yelp = {
       method: 'GET',
       headers: {
         accept: 'application/json',
-        Authorization: `Bearer ${YELP_API_KEY}`
+        Authorization: `Bearer ${REACT_APP_YELP}`
       }
     };
   
