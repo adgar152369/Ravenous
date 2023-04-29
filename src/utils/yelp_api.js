@@ -1,4 +1,3 @@
-import {REACT_APP_YELP} from '/config.js';
 
 const Yelp = {
   async search(terms, location, sortByOption) {
